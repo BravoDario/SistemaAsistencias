@@ -1,0 +1,57 @@
+        body {
+            background-color: #416991; /* Gama de azules para el fondo */
+        }
+
+        .card {
+            background-color: #044a8f; /* Azul medio para la tarjeta */
+            color: #ffffff; /* Texto blanco para contrastar */
+        }
+
+        /* Estilo para centrar y hacer negrita el label */
+        .estilo-label {
+          display: flex;
+          align-items: center;
+          font-weight: bold;
+        }
+
+        select, input, button {
+            margin-top: 0.5rem;
+        }
+
+        /* Agregamos un estilo para los checkboxes */
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-group input {
+            margin-right: 0.5rem;
+        }
+
+        /* Estilo para el botón */
+        .btn-generar {
+            background-color: #604278;
+            color: #ffffff;
+            transition: background-color 0.3s;
+        }
+
+        .btn-generar:hover,
+        .btn-generar:active {
+            background-color: #6a0bb8;
+        }
+
+        /* Estilo para centrar el título */
+        h2 {
+            text-align: center;
+        }
+
+        /* Estilo para agregar scroll */
+        .scroll-container {
+            max-height: 500px; /* Puedes ajustar la altura máxima según tus necesidades */
+            overflow-y: auto;
+        }

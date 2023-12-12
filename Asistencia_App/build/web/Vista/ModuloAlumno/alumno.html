@@ -1,78 +1,227 @@
-<!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link href="inicio.css" rel="stylesheet" type="text/css"/>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <a href="Assets/Bootstrap5/css/bootstrap.min.css"></a>
+      <link rel="stylesheet" href="alumno.css" type="text/css">
+          <link rel="stylesheet" href="../../Assets/Bootstrap5/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-HKkRSzfs3lnz9SmhYOC0YoaXwE2LmAdn3S6zY8jz+L6G6IS/WCzIm3VIbbi9kSdJ" crossorigin="anonymous">
+    <title>Alumno</title>
+    <style>
+           body {
+            background-color: #416991; /* Gama de azules para el fondo */
+        }
 
-  <link href="inicio.css" rel="stylesheet" type="text/css"/>
-  <title>Dashboard</title>
+    /* Estilos personalizados */
+        .encabezado {
+            background-color: black;
+            color: white;
+        }
 
+        .horario {
+            background-color: #757575;
+            color: white;
+        }
+
+        .linea-divisoria-horizontal {
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .linea-divisoria-vertical {
+            border-right: 1px solid #dee2e6;
+        }
+
+        .seleccionado {
+            background-color: #007bff !important;
+            color: white;
+        }
+
+        .d-none {
+            display: none !important;
+        }
+    </style>
 </head>
 <body>
+    
+    
+    
+    <div class="card card-three mt-5">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid" id="fixed-top">
+        <!-- Botón "Sistema Escolar" a la izquierda -->
+        <a class="navbar-brand" href="#">
+            <span class="d-inline-block align-text-top text-wrap" style="font-size: 20px;">Sistema Escolar</span>
+        </a>
 
-  <!-- Primer card (Parte Uno) -->
-  <div class="card card-one">
-    <div class="card-one-header">
-      <label for="nombre">Nombre:</label>
-      <div class="label-value" id="nombre">Juan Pérez</div>
-
-      <label for="carrera">Carrera:</label>
-      <div class="label-value" id="carrera">Ingeniería Informática</div>
-
-      <div class="welcome-text">Bienvenido</div>
+        <!-- Botón de cerrar sesión a la derecha -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="cerrarSesion();">
+                    <i class="fas fa-sign-out-alt me-2"></i>
+                    <span class="d-inline-block align-text-top text-wrap" style="font-size: 20px;">Cerrar Sesi&oacute;n</span>
+                </a>
+            </li>
+        </ul>
     </div>
-  </div>
+</nav>
+        <div class="card-three-header">
+            <h5 class="card-title">Horario</h5>
+        </div>
+        <div class="card-three-body">
+            <div class="table-container">
+                <h5 class="mb-4 center"><center><b><i>Horario del ciclo escolar</i></b></center></h5>
+                <div class="container mt-4">
+                    <div class="row encabezado linea-divisoria-horizontal">
+                        <div class="col linea-divisoria-vertical">
+                            <h5>Horario</h5>
+                        </div>
+                        <div class="col-2 linea-divisoria-vertical">
+                            <h5>Lunes </h5>
+                        </div>
+                        <div class="col-2 linea-divisoria-vertical">
+                            <h5>Martes</h5>
+                        </div>
+                        <div class="col-2 linea-divisoria-vertical">
+                            <h5>Miércoles</h5>
+                        </div>
+                        <div class="col-2 linea-divisoria-vertical">
+                            <h5>Jueves</h5>
+                        </div>
+                        <div class="col-2 linea-divisoria-vertical">
+                            <h5>Viernes</h5>
+                        </div>
+                    </div>
 
-  <!-- Segundo card -->
-  <div class="card card-two mt-5">
-    <div class="card-two-header">
-      <h5 class="card-title">Parte Dos</h5>
-    </div>
-    <div class="card-two-body">
-      <p class="card-text">Carrera</p>
-      <p class="card-text">Materia</p>
-      <p class="card-text">Maestro</p>
-    </div>
-  </div>
+                    <div class="row encabezado linea-divisoria-horizontal">
+                       <div class="col-2 linea-divisoria-vertical horario-celda" data-materia="NombreMateria1" onclick="mostrarInformacion('lu1', 'Profesor1')">Horario/Día</div>
+                        <div class="col-2 linea-divisoria-vertical horario-celda" data-materia="NombreMateria1" onclick="mostrarInformacion('lu1', 'Profesor1')">Lunes 1</div>
+                        <div class="col-2 linea-divisoria-vertical horario-celda" data-materia="NombreMateria2" onclick="mostrarInformacion('ma1', 'Profesor2')">Martes 1</div>
+                        <div class="col-2 linea-divisoria-vertical horario-celda" data-materia="NombreMateria3" onclick="mostrarInformacion('mi1', 'Profesor3')">Miércoles 1</div>
+                        <div class="col-2 linea-divisoria-vertical horario-celda" data-materia="NombreMateria4" onclick="mostrarInformacion('ju1', 'Profesor4')">Jueves 1</div>
+                        <div class="col-2 linea-divisoria-vertical horario-celda" data-materia="NombreMateria5" onclick="mostrarInformacion('vi1', 'Profesor5')">Viernes 1</div>
+                    </div>
 
-  <!-- Tercer card -->
-  <div class="card card-three mt-5">
+                    <div class="row horario linea-divisoria-horizontal">
+                        <div class="col linea-divisoria-vertical">5:10 pm - 6:00 pm</div>
+                        <div class="col-2 linea-divisoria-vertical" id="lu2"></div>
+                        <div class="col-2 linea-divisoria-vertical" id="ma2"></div>
+                        <div class="col-2 linea-divisoria-vertical"id="mi2"></div>
+                        <div class="col-2 linea-divisoria-vertical"id="ju2"></div>
+                        <div class="col-2 linea-divisoria-vertical" id="vi2"></div>
+                    </div>
+
+                    <div class="row horario linea-divisoria-horizontal">
+                        <div class="col linea-divisoria-vertical">6:00 pm - 6:50 pm</div>
+                        <div class="col-2 linea-divisoria-vertical" id="lu3"></div>
+                        <div class="col-2 linea-divisoria-vertical" id="ma3"></div>
+                        <div class="col-2 linea-divisoria-vertical"id="mi3"></div>
+                        <div class="col-2 linea-divisoria-vertical"id="ju3"></div>
+                        <div class="col-2 linea-divisoria-vertical" id="vi3"></div>
+                    </div>
+
+                    <div class="row horario linea-divisoria-horizontal">
+                        <div class="col linea-divisoria-vertical">6:50 pm - 7:40 pm</div>
+                        <div class="col-2 linea-divisoria-vertical" id="lu4"></div>
+                        <div class="col-2 linea-divisoria-vertical" id="ma4"></div>
+                        <div class="col-2 linea-divisoria-vertical"id="mi4"></div>
+                        <div class="col-2 linea-divisoria-vertical"id="ju4"></div>
+                        <div class="col-2 linea-divisoria-vertical" id="vi4"></div>
+                    </div>
+
+                    <div class="row horario linea-divisoria-horizontal">
+                        <div class="col linea-divisoria-vertical">7:40 pm - 8:30 pm</div>
+                        <div class="col-2 linea-divisoria-vertical" id="lu5"></div>
+                        <div class="col-2 linea-divisoria-vertical" id="ma5"></div>
+                        <div class="col-2 linea-divisoria-vertical"id="mi5"></div>
+                        <div class="col-2 linea-divisoria-vertical"id="ju5"></div>
+                        <div class="col-2 linea-divisoria-vertical" id="vi5"></div>
+                    </div>
+
+                    <div class="row horario linea-divisoria-horizontal">
+                        <div class="col linea-divisoria-vertical">8:30 pm - 9:20 pm</div>
+                        <div class="col-2 linea-divisoria-vertical" id="lu6"></div>
+                        <div class="col-2 linea-divisoria-vertical" id="ma6"></div>
+                        <div class="col-2 linea-divisoria-vertical"id="mi6"></div>
+                        <div class="col-2 linea-divisoria-vertical"id="ju6"></div>
+                        <div class="col-2 linea-divisoria-vertical" id="vi6"></div>  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Card de Asistencia -->
+
+<!-- Card de Asistencia -->
+<div class="card card-three mt-5 d-none" id="asistenciaCard">
     <div class="card-three-header">
-      <h5 class="card-title">Parte Tres</h5>
+        <h5 class="card-title">Asistencia de <span id="materiaNombre">Materia</span></h5>
     </div>
     <div class="card-three-body">
-      <div class="table-container">
-        <h5 class="mb-4">Registros</h5>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Fecha</th>
-              <th>Horario</th>
-              <th>Estatus de Asistencia</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Puedes llenar esta tabla con datos dinámicos -->
-            <tr>
-              <td>2023-01-01</td>
-              <td>10:00 AM</td>
-              <td>Asistió</td>
-            </tr>
-            <tr>
-              <td>2023-01-02</td>
-              <td>02:00 PM</td>
-              <td>No Asistió</td>
-            </tr>
-            <!-- ... Más filas ... -->
-          </tbody>
-        </table>
-      </div>
+        <div class="table-container mx-auto"> <!-- Agregado mx-auto para centrar la tabla -->
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="fechaDesde">Desde:</label>
+                    <input type="date" id="fechaDesde" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <label for="fechaHasta">Hasta:</label>
+                    <input type="date" id="fechaHasta" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <label for="parcialSelect">Parcial:</label>
+                    <select id="parcialSelect" class="form-select">
+                        <option value="parcial">Parcial</option>
+                        <option value="parcial1">Parcial 1</option>
+                        <option value="parcial2">Parcial 2</option>
+                        <option value="parcial3">Parcial 3</option>
+                    </select>
+                </div>
+            </div>
+            <h5 class="mb-4">Registros</h5>
+            <table class="table table-bordered table-striped">
+                <thead style="background-color: #100670; color: white;">
+                    <tr>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Día</th>
+                        <th scope="col">Horario</th>
+                        <th scope="col">Estatus de Asistencia</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>Lunes</td>
+                        <td>5:10-6:00</td>
+                        <td>A</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Lunes</td>
+                        <td>6:00-6:50</td>
+                        <td>A</td>
+                    </tr>
+                    <!-- ... Más filas ... -->
+                </tbody>
+            </table>
+        </div>
     </div>
-  </div>
+</div>
+    <script src="controladorAlumno.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="login.js"></script>
+    <script>
+        function cerrarSesion() {           
+            Swal.fire({
+                icon: 'info',
+                title: 'Sesión cerrada',
+                text: 'Sesión cerrada correctamente.'
+            }).then(() => {
+                // Redireccionar a la página principal
+                window.location.href = '/Asistencia_App/index.html';
+            });
+        }
 
-  <!-- Bootstrap JS (opcional, pero necesario para algunos componentes de Bootstrap) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </script>
 </body>
 </html>

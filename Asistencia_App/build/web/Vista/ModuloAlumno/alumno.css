@@ -1,9 +1,98 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 30 nov 2023, 05:46:15
-    Author     : Angel
-*/
+body {
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
 
+    /* Estilos del primer card */
+    .card-one {
+      margin-top: 50px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-one-header {
+      text-align: center;
+      padding: 20px;
+      background-color: #343a40;
+      color: #ffffff;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .card-one-body {
+      padding: 20px;
+    }
+
+    /* Estilos del segundo card */
+    .card-two {
+      margin-top: 50px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-two-header {
+      text-align: center;
+      padding: 20px;
+      background-color: #343a40;
+      color: #ffffff;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .card-two-body {
+      padding: 20px;
+    }
+
+    /* Estilos del tercer card (con margen) */
+    .card-three {
+      margin-top: 50px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-three-header {
+      text-align: center;
+      padding: 20px;
+      background-color: #343a40;
+      color: #ffffff;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .card-three-body {
+      padding: 20px;
+    }
+
+    /* Estilos para la tabla de registros */
+    .table-container {
+      margin-top: 20px;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .table th, .table td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .table th {
+      background-color: #343a40;
+      color: #ffffff;
+    }
+    
+    
